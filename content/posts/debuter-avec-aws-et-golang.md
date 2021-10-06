@@ -16,7 +16,10 @@ DynamoDB est le service cloud d'Amazon qui propose des **bases de données** non
 
 ## Pré-requis
 
-
+Il vous faut bien évidemment un compte sur la console AWS, et les permissions nécessaires pour ces exemples :
+- Permission de créer une table
+- ...
+- ...
 
 ## Créer une table
 
@@ -30,6 +33,8 @@ Cette fonction prend comme arguments le contexte, les paramètres de création e
 - AttributeDefinitions : attributs de la clef primaire
 - KeySchema : schéma de la clef primaire
 - TableName : le nom de la table
+
+Nous allons également choisir le mode `BillingModePayPerRequest` pour simplifier l'exercice.
 
 ```go
 // Set the parameters
@@ -49,8 +54,30 @@ params := &dynamodb.CreateTableInput{
     },
   },
   TableName: &name,
+  BillingMode: types.BillingModePayPerRequest,
 }
 ```
+
+Ensuite on peut créer la requête ci-dessous :
+
+```go
+// Create the table
+_, err = client.CreateTable(context.TODO(), params)
+if err != nil {
+  log.Fatalf("failed to list tables: %v", err)
+}
+```
+
+Lancer le programme en laçant la commande `go run main.go example1 create`, vous devriez voir ceci :
+
+```sh
+go run main.go example1 create
+2021/10/06 17:46:17 Successfully created table [test]
+```
+
+Vous devriez voir votre table dans la console :
+
+![Table créée](/images/posts/table-creee.png)
 
 ## Ajouter des éléments dans une table
 
@@ -69,14 +96,16 @@ Cette fonction prend comme arguments le contexte, les paramètres d'ajout et des
 params := &dynamodb.PutItemInput{
   TableName: aws.String(tableName),
   Item: map[string]types.AttributeValue{
-    "_id":   &types.AttributeValueMemberS{Value: "12346"},
-    "name":  &types.AttributeValueMemberS{Value: "John Doe"},
-    "email": &types.AttributeValueMemberS{Value: "john@doe.io"},
+    "_id":        &types.AttributeValueMemberS{Value: "12346"},
+    "name":       &types.AttributeValueMemberS{Value: "John Doe"},
+    "email":      &types.AttributeValueMemberS{Value: "john@doe.io"},
+    "age":        &types.AttributeValueMemberN{Value: "49"},
+    "is_enabled": &types.AttributeValueMemberBOOL{Value: false},
   },
 }
 ```
 
-On peut ensuite lancer la requête ci-dessous :
+Ensuite on peut créer la requête ci-dessous :
 
 ```go
 // Put item into table
@@ -84,6 +113,13 @@ _, err = client.PutItem(context.TODO(), params)
 if err != nil {
   log.Fatalf("error while puting item into table: %v", err)
 }
+```
+
+Lancer le programme en laçant la commande `go run main.go example1 create`, vous devriez voir ceci :
+
+```sh
+go run main.go example1 put -t test
+2021/10/06 17:46:17 Succesfully put item into table [test]
 ```
 
 On peut confirmer sur la console AWS que l'on voit bien notre élément. On verra également juste ensuite comment confirmer cela en utilisant la librairie.
