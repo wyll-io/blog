@@ -1,0 +1,25 @@
+{{ partial "head" . }}
+
+<body>
+  {{ partial "navbar" . }}
+
+  <div class="container mt-4">
+    <h1>{{ .Title }}</h1>
+    
+    <span class="text-muted mb-4">Publié le <b>{{ .Date.Format "02/01/2006" }}</b> par <b>{{ .Params.author }}</b></span>
+
+    {{ range .Params.tags }}
+    <span class="badge bg-light text-dark">{{ . }}</span>
+    {{ end }}
+  
+    <div class="mt-4">
+    {{ .Content }}
+    </div>
+
+    <!-- <h1>Commentaires</h1>
+    {{ template "_internal/disqus.html" . }} -->
+  </div>
+
+  {{ partial "footer" . }}
+</body>
+</html>

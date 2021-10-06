@@ -1,0 +1,29 @@
+{{ partial "head" . }}
+
+<body>
+  {{ partial "navbar" . }}
+
+  <div class="container mt-4">
+    <div class="row">
+      <h1>Les derniers articles</h1>
+      {{ range ( where .Site.RegularPages "Type" "posts" | first 5) }}
+      <div class="col-4">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Publié le <b>{{ .Date.Format "02/01/2006" }}</b></h6>
+            {{ range (.GetTerms "tags") }}
+            <span class="badge badge-primary">{{ .LinkTitle }}</span>
+            {{ end }}
+            <p class="card-text">
+              {{ .Summary }}
+            </p>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ partial "footer" . }}
+</body>
+</html>

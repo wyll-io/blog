@@ -1,0 +1,10 @@
+baseurl = "https://blog.wyll.io"
+languageCode = "fr"
+title = "Wyll.io | Blog"
+disqusShortname = "blogwyllio"
+googleAnalytics = "blogwyllio"
+
+[taxonomies]
+	author = "author"
+	tag = "tags"
+	category = "categories"
