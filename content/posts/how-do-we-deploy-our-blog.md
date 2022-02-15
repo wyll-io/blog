@@ -1,6 +1,12 @@
-# How did we
+---
+title: "How do we build and deploy our blog ?"
+date: 2022-02-10
+tags: ["aws", "golang", "dev"]
+author: "François ALLAIS"
+draft: false
+---
 
-# The blog : Hugo, not Wordpress
+# Hugo, not Wordpress
 
 The aim of this blog is to share technical skills and experiences within a website that can be read either on a computer, a mobile, etc.. That being said, there is no need to use a CMS such as Wordpress as it would be totally overkilled because it rely on a complex tool and an interpreted langage (PHP). It can simply be a static website. For the comments, let's use a SaaS, for example [Disqus](https://disqus.com).
 
@@ -8,9 +14,11 @@ That is why we chose to use [Hugo](https://hugo.io).
 
 # The deployment : Github Actions and AWS
 
-We considered two choices regarding the deployment to AWS : *S3 bucket* or *ECS*. The S3 bucket solution appears to be cheaper as the ECS would need the instance to be always alive. The S3 just serve files, that is exactly what the website is, just files.
+We considered two choices regarding the deployment to AWS : **S3 bucket** or **ECS**. The S3 bucket solution appears to be cheaper as the ECS would need the instance to be always alive. The S3 just serve files, that is exactly what the website is, just files, and with a **Cloudfront** configuration, it will do the job.
 
-That being said, we need to generate the static files and sync them into out S3 bucket. This will be done by Github Actions.
+That being said, we need to generate the static files and sync them into out S3 bucket. This will be done by **Github Actions**.
+
+Let's create the action configuration file.
 
 ```yaml
 name: Build and deploy
@@ -35,6 +43,7 @@ jobs:
         AWS_DEFAULT_REGION: 'eu-west-3'
 ```
 
+This action will trigger on each push on the master branch, checkout code, generate the static files,  
 And that's all ! :)
 
 # AWS Cloudfront and Route 53
