@@ -3,7 +3,7 @@ name: Spelling
 on:
   pull_request:
   push:
-    branches: [dev]
+    branches: [dev, master]
 
 jobs:
   spellcheck:
