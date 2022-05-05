@@ -68,20 +68,21 @@ if err != nil {
 }
 ```
 
-Lancer le programme en laçant la commande `go run main.go example1 create`, vous devriez voir ceci :
+Run the app by using that command `go run main.go example1 create`, you should see this :
 
 ```sh
 go run main.go example1 create
 2021/10/06 17:46:17 Successfully created table [test]
 ```
 
-Vous devriez voir votre table dans la console :
+You can confirm that your table is created in the AWS console :
 
 ![Table créée](/images/posts/table-creee.png)
 
 ## Ajouter des éléments dans une table
 
-Pour créer une table, il faut utiliser la fonction
+Pour créer une table, il faut utiliser la fonction `PutItem`
+
 ```go
 func (*dynamodb.Client).PutItem(ctx context.Context, params *dynamodb.PutItemInput, optFns ...func(*dynamodb.Options)) (*dynamodb.PutItemOutput, error)
 ```
