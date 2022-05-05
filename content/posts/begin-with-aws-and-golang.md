@@ -3,7 +3,7 @@ title: "Begin with AWS and Golang"
 date: 2021-10-05
 tags: ["aws", "golang", "dev"]
 author: "François ALLAIS"
-draft: false
+draft: true
 ---
 
 # Tutorial objectives

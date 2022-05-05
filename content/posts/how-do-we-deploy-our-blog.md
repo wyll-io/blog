@@ -3,7 +3,7 @@ title: "How do we build and deploy our blog ?"
 date: 2022-02-10
 tags: ["aws", "golang", "dev"]
 author: "François ALLAIS"
-draft: false
+draft: true
 ---
 
 # Hugo, not Wordpress
