@@ -1,9 +1,9 @@
 ---
 title: "Begin with AWS and Golang"
-date: 2021-10-05
+date: 2022-02-05
 tags: ["aws", "golang", "dev"]
 author: "François ALLAIS"
-draft: true
+draft: false
 ---
 
 # Tutorial objectives
@@ -81,16 +81,16 @@ You can confirm that your table is created in the AWS console :
 
 ## Ajouter des éléments dans une table
 
-Pour créer une table, il faut utiliser la fonction `PutItem`
+To create a table, we must use the function `PutItem`:
 
 ```go
 func (*dynamodb.Client).PutItem(ctx context.Context, params *dynamodb.PutItemInput, optFns ...func(*dynamodb.Options)) (*dynamodb.PutItemOutput, error)
 ```
 
-Cette fonction prend comme arguments le contexte, les paramètres d'ajout et des éventuelles options. Créons les paramètres ci-dessous, sachant que les éléments suivants sont obligatoires :
+This function takes as arguments the context, the addition parameters and any options. Let's create the parameters below, knowing that the following are mandatory:
 
-- Item : l'élément à ajouter
-- TableName : le nom de la table
+- Item : the item to add
+- TableName : the name of the table
 
 ```go
 // Set the parameters
@@ -106,7 +106,8 @@ params := &dynamodb.PutItemInput{
 }
 ```
 
-Ensuite on peut créer la requête ci-dessous :
+
+Then we can create the query below:
 
 ```go
 // Put item into table
@@ -116,27 +117,28 @@ if err != nil {
 }
 ```
 
-Lancer le programme en laçant la commande `go run main.go example1 create`, vous devriez voir ceci :
+Launch the program by running the command `go run main.go example1 create`, you should see this:
 
 ```sh
 go run main.go example1 put -t test
 2021/10/06 17:46:17 Succesfully put item into table [test]
 ```
 
-On peut confirmer sur la console AWS que l'on voit bien notre élément. On verra également juste ensuite comment confirmer cela en utilisant la librairie.
+We can confirm on the AWS console that we see our element. We will also see just then how to confirm this using the library.
 
 ![Elements dans la table DynamoDB](/images/posts/elements-table-dynamodb.png)
 
-## Chercher des éléments dans une table
+## Find elements in a table
 
-Pour récupérer des éléments dans une table, il faut utiliser la fonction
+To retrieve elements from a table, use the `Scan` function:
+
 ```go
 func (*dynamodb.Client).Scan(ctx context.Context, params *dynamodb.ScanInput, optFns ...func(*dynamodb.Options)) (*dynamodb.ScanOutput, error)
 ```
 
-Comme d'habitude, elle prend un contexte et des paramètres, seul la valeur `TableName` est obligatoire. Mais ici nous allons tester de filtrer les résultats, pour cela, il faut ajouter une propriété `FilterExpression` qui est de type `*string` et qui contient votre expression.
+As usual, it takes context and parameters, only the `TableName` value is required. But here we are going to test to filter the results, for that, you must add a `FilterExpression` property which is of the `*string` type and which contains your expression.
 
-Dans cette exemple, on va filtrer les éléments dont la proriété `name` contient `John` (on a ajouté un élément plus haut dans le tutoriel). La particularité de ce filtre est que `name` est un nom réservé, il faut donc utiliser une `ExpressionAttributeNames` pour le remplacer par `#n`. Ensuite, on va utiliser une `ExpressionAttributeValues` pour passer dynamiquement la valeur qui servira au filtre. Voici le récapitulatif ci-dessous :
+In this example, we will filter the elements whose `name` property contains `John` (we added an element earlier in the tutorial). The particularity of this filter is that `name` is a reserved name, so you have to use an `ExpressionAttributeNames` to replace it with `#n`. Then, we will use an `ExpressionAttributeValues` to dynamically pass the value that will be used for the filter. Here is the summary below:
 
 ```go
 filterExpression := "contains(#n, :n)"
@@ -154,7 +156,7 @@ params := &dynamodb.ScanInput{
 }
 ```
 
-On exécute ensuite la requête ci-dessous :
+Then run the query below:
 
 ```go
 // Scan the table
@@ -164,7 +166,7 @@ if err != nil {
 }
 ```
 
-et on obtient, s'il n'y a pas d'erreur, une réponse de type `*dynamodb.ScanOutput`. Pour afficher tous les éléments, il faudra faire une boucle sur la propriété `resp.Items`, si on veut le total on peut utiliser `resp.Count` (total après application des filtres) ou `resp.ScannedCount` (total avant application des filtres). Par exemple :
+and we get, if there is no error, a response of type `*dynamodb.ScanOutput`. To display all the items, you will have to loop on the `resp.Items` property, if you want the total you can use `resp.Count` (total after applying filters) or `resp.ScannedCount` (total before applying filters). For example :
 
 ```go
 if resp.Count == 0 {
@@ -181,6 +183,6 @@ for _, item := range resp.Items {
 
 # Simple Service Storage (S3)
 
-## Pré-requis
+## Prerequisites
 
-Pour réaliser les étapes de ce tutoriel.
+Soon be published !
