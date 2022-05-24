@@ -6,9 +6,10 @@ author: "François ALLAIS"
 draft: false
 ---
 
-# Tutorial objectives
+You will discover how to use certain **AWS services (DynamoDB, S3, etc.)** with the **Golang** language.
+<!--more-->
 
-You will discover how to use certain **AWS services (DynamoDB, S3, etc.)** with the **Golang** language. For this we will use the official Amazon library for Golang: `github.com/aws/aws-sdk-go-v2`.
+For this we will use the official Amazon library for Golang: `github.com/aws/aws-sdk-go-v2`.
 
 # DynamoBD
 

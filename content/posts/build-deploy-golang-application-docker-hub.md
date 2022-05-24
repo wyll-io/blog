@@ -3,10 +3,11 @@ title: "Build and deploy a Golang application to Docker Hub"
 date: 2022-01-15
 tags: ["docker", "golang", "dev"]
 author: "François ALLAIS"
-draft: true
+draft: false
 ---
 
 In this article, you will learn a very basic example of how to build, test and deploy a Golang application into the Docker Hub. To do so we will use the Github Actions.
+<!--more-->
 
 # The Github repository
 
