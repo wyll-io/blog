@@ -1,40 +1,40 @@
 ---
-title: "Débuter avec AWS et Golang"
-date: 2021-10-05T08:47:11+01:00
-tags: ["aws", "golang"]
+title: "Begin with AWS and Golang"
+date: 2021-10-05
+tags: ["aws", "golang", "dev"]
 author: "François ALLAIS"
-draft: false
+draft: true
 ---
 
-# Objectifs du tutoriel
+# Tutorial objectives
 
-Vous allez découvrir comment utliser certains **services AWS (DynamoDB, S3, etc..)** avec le langage **Golang**. Pour cela nous allons utiliser la librairie officielle d'Amazon pour Golang : `github.com/aws/aws-sdk-go-v2`. C'est la version 2 qui sera utilisée.
+You will discover how to use certain **AWS services (DynamoDB, S3, etc.)** with the **Golang** language. For this we will use the official Amazon library for Golang: `github.com/aws/aws-sdk-go-v2`.
 
 # DynamoBD
 
-DynamoDB est le service cloud d'Amazon qui propose des **bases de données** non relationnelles (comme MongoDB, RethinkDB, etc..), nous allons utiliser la librairie Golang pour créer une base de données, lister les valeurs d'une table, ajouter et supprimer de la donnée.
+DynamoDB is the Amazon's cloud service that offers non-relational **databases** (like MongoDB, RethinkDB, etc..), we will use the Golang library to create a database, list the values of a table, add and delete data.
 
-## Pré-requis
+## Prerequisites
 
-Il vous faut bien évidemment un compte sur la console AWS, et les permissions nécessaires pour ces exemples :
-- Permission de créer une table
+You obviously need an account on the AWS console, and the necessary permissions for these examples:
+- Permission to create a table
 - ...
 - ...
 
-## Créer une table
+## Create a table
 
-Pour créer une table, il faut utiliser la fonction
+To create a table, use the function
 ```go
 func (*dynamodb.Client).CreateTable(ctx context.Context, params *dynamodb.CreateTableInput, optFns ...func(*dynamodb.Options)) (*dynamodb.CreateTableOutput, error)
 ```
 
-Cette fonction prend comme arguments le contexte, les paramètres de création et des éventuelles options. Créons les paramètres ci-dessous, sachant que les éléments suivants sont obligatoires :
+This function takes as arguments the context, the creation parameters and other non-mandatory options. Let's create the parameters below, knowing that the following are mandatory:
 
-- AttributeDefinitions : attributs de la clef primaire
-- KeySchema : schéma de la clef primaire
-- TableName : le nom de la table
+- AttributeDefinitions: attributes of the primary key
+- KeySchema: primary key scheme
+- TableName: the name of the table
 
-Nous allons également choisir le mode `BillingModePayPerRequest` pour simplifier l'exercice.
+We will also choose the `BillingModePayPerRequest` mode to simplify the exercise.
 
 ```go
 // Set the parameters
@@ -58,7 +58,7 @@ params := &dynamodb.CreateTableInput{
 }
 ```
 
-Ensuite on peut créer la requête ci-dessous :
+Then we can create the following request:
 
 ```go
 // Create the table
@@ -68,20 +68,21 @@ if err != nil {
 }
 ```
 
-Lancer le programme en laçant la commande `go run main.go example1 create`, vous devriez voir ceci :
+Run the app by using that command `go run main.go example1 create`, you should see this :
 
 ```sh
 go run main.go example1 create
 2021/10/06 17:46:17 Successfully created table [test]
 ```
 
-Vous devriez voir votre table dans la console :
+You can confirm that your table is created in the AWS console :
 
 ![Table créée](/images/posts/table-creee.png)
 
 ## Ajouter des éléments dans une table
 
-Pour créer une table, il faut utiliser la fonction
+Pour créer une table, il faut utiliser la fonction `PutItem`
+
 ```go
 func (*dynamodb.Client).PutItem(ctx context.Context, params *dynamodb.PutItemInput, optFns ...func(*dynamodb.Options)) (*dynamodb.PutItemOutput, error)
 ```

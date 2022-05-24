@@ -1,0 +1,8 @@
+matrix:
+- name: Markdown
+  aspell:
+    lang: en
+  pipeline: null
+  sources:
+  - '**/*.md'
+  default_encoding: utf-8
