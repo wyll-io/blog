@@ -13,7 +13,7 @@ googleAnalytics = "blogwyllio"
 
 [[deployment.targets]]
 name = "blog.wyll.io"
-URL = "s3://blog.wyll.io?region=eu-west-2"
+URL = "s3://blog.wyll.io?region=eu-west-3"
 
 [[deployment.matchers]]
 pattern = "^.+\\.(js|css|svg|ttf)$"
