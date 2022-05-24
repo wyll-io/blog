@@ -4,4 +4,4 @@ type: misc
 layout: about
 ---
 
-# Qui sommes-nous ?
+# About us

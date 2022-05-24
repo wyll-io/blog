@@ -5,7 +5,7 @@
 
   <div class="container mt-4">
     <div class="row">
-      <h1>Les derniers articles</h1>
+      <h1>Last posts</h1>
       {{ range ( where .Site.RegularPages "Type" "posts" | first 5) }}
       <div class="col-4">
         <div class="card mb-4">
