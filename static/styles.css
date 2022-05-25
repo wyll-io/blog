@@ -1,10 +1,6 @@
 html, body
 {
   background-color: #e8eaee;
-}
-
-body
-{
   min-height: 100%;
 }
 
@@ -16,9 +12,7 @@ body
 .footer
 {
   background-color: #132651;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  height: 100px;
 }
 
 .card-title a
