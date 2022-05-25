@@ -6,16 +6,24 @@ html, body
 
 .highlight pre
 {
-  padding: 5px;
+  padding: 10px;
 }
 
 .footer
 {
   background-color: #132651;
-  height: 100px;
+  margin-top: auto;
 }
 
 .card-title a
 {
   text-decoration: none;
+  color: #132651;
 }
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+

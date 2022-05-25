@@ -1,25 +1,13 @@
 {{ partial "head" . }}
 
-<body>
+<body class="wrap">
   {{ partial "navbar" . }}
 
   <div class="container mt-4">
     <div class="row">
       {{ range ( where .Site.RegularPages "Type" "posts") }}
       <div class="col-12">
-        <div class="card mb-4">
-          <div class="card-body">
-            <h5 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
-            <h6 class="card-subtitle mb-2 text-muted">Publié le <b>{{ .Date.Format "02/01/2006" }}</b></h6>
-            {{ range (.GetTerms "tags") }}
-            <span class="badge badge-primary">{{ .LinkTitle }}</span>
-            {{ end }}
-            <p class="card-text">
-              {{ .Summary }}
-            </p>
-            <a href="{{ .RelPermalink }}" class="btn btn-info">Read more</a>
-          </div>
-        </div>
+        {{ partial "post_summary" . }}
       </div>
       {{ end }}
     </div>
