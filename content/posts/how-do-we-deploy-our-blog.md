@@ -110,3 +110,7 @@ And that's all ! :)
 # AWS Cloudfront and DNS
 
 Will be explained soon :)
+
+ - S3 bucket
+ - Cloudfront endpoint
+ - SSL certificate
