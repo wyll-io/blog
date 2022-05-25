@@ -8,3 +8,28 @@ googleAnalytics = "blogwyllio"
 	author = "author"
 	tag = "tags"
 	category = "categories"
+
+[deployment]
+
+[[deployment.targets]]
+name = "blog.wyll.io"
+URL = "s3://blog.wyll.io?region=eu-west-3"
+
+[[deployment.matchers]]
+pattern = "^.+\\.(js|css|svg|ttf)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
+
+[[deployment.matchers]]
+pattern = "^sitemap\\.xml$"
+contentType = "application/xml"
+gzip = true
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
+gzip = true

@@ -3,10 +3,15 @@ title: "Build and deploy a Golang application to Docker Hub"
 date: 2022-01-15
 tags: ["docker", "golang", "dev"]
 author: "François ALLAIS"
-draft: true
+draft: false
 ---
 
 In this article, you will learn a very basic example of how to build, test and deploy a Golang application into the Docker Hub. To do so we will use the Github Actions.
+<!--more-->
+
+# The Github repository
+
+I assume that you created the Github repository, added a README, etc.. For this post, I will call the application `awesomeapp`.
 
 # The Golang application
 
@@ -42,13 +47,39 @@ This very simple application will basically print `Hello World` on a Web page.
 Let's write some basic tests for the `sum()` function.
 
 ```go
-tests()
+package main
+
+import (
+  "testing"
+)
+
+func TestSum(t *testing.T) {
+  if sum(1,1) != 2 {
+    t.Fatalf(`should be 3 but got %d`, sum(1,1))
+  }
+}
+```
+
+# The Dockerfile
+
+At the root of the projet, we also need to add a **Dockerfile**:
+
+```Dockerfile
+FROM golang:latest as builder
+WORKDIR /go/src/awesomeapp
+ADD . /go/src/awesomeapp
+RUN go get -d -v ./...
+RUN go build -o /go/bin/awesomeapp
+
+FROM gcr.io/distroless/base-debian10
+COPY --from=builder /go/bin/awesomeapp /
+CMD [ "/awesomeapp" ]
 ```
 
 # Deploy it !
 
 ```yaml
-name: Build and deploy
+name: Deploy to Docker registry
 
 on:
   push:
@@ -71,10 +102,10 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: fallais/example-docker-hub
+          images: username/awesomeapp
       
       - name: Build and push Docker image
-        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        uses: docker/build-push-action@v3
         with:
           context: .
           push: true
