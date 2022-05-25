@@ -3,6 +3,11 @@ html, body
   background-color: #e8eaee;
 }
 
+body
+{
+  min-height: 100%;
+}
+
 .highlight pre
 {
   padding: 5px;
@@ -11,4 +16,12 @@ html, body
 .footer
 {
   background-color: #132651;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.card-title a
+{
+  text-decoration: none;
 }
