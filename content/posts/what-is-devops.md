@@ -1,10 +1,24 @@
+---
+title: "Introduction to DevOps"
+date: 2022-31-08
+tags: ["devops", "agile", "practices"]
+author: "Lucas VENTURA"
+draft: false
+---
+
+You will read an introduction to the concept of **DevOps** to understand the origin and the stakes of this philosophy. 
+<!--more-->
+
 # What is DevOps ?
 
 ## Introduction
 
-DevOps is an approach that brings together the two main functions of a company's Information Systems Department. It brings together the development team (Dev) and the system operations team (Ops).
+DevOps is an approach that brings together the two main functions of a company's Information Systems Department:
 
-The DevOps movement was born in 2007 following the dissatisfaction of the system administration staff regarding Agile methods. Indeed, for several years, these methods have privileged the development part while neglecting the production system part.
+ - The development team (Dev)
+ - The system operations team (Ops)
+
+The DevOps movement was born in 2007 following the dissatisfaction of the system administration staff regarding Agile methods. Indeed, for several years, these methods have privileged the development part while neglecting the production system part, which created technical difficulties or very complex processes regarding the deployment and maintenance of services.
 
 ## DevOps and Agile methods
 
@@ -22,7 +36,7 @@ The principle of continuous delivery is that each modification of the code must 
 
 This principle is often confused with continuous deployment. It is the last step of the process and aims at deploying each new version in one or several environments of recipe or production in an automatic way.
 
-![What is the difference between continuous delivery and continuous deployment?  - Quora](https://qph.cf2.quoracdn.net/main-qimg-a82fe747cc53bd5dadb0ccee0f02af5c-pjlq)
+![What is the difference between continuous delivery and continuous deployment?](../../static/images/posts/delivery-vs-deployment.png)
 ## The Stakes
 
 The implementation of CI / CD can allow software developers to save a considerable amount of time, but also to have a stricter and more regular quality control during development.
