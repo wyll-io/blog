@@ -1,3 +1,4 @@
+
 ---
 title: "Introduction to DevOps"
 date: 2022-31-08
@@ -13,16 +14,16 @@ You will read an introduction to the concept of **DevOps** to understand the ori
 
 ## Introduction
 
-DevOps is an approach that brings together the two main functions of a company's Information Systems Department:
+**DevOps** is an approach that brings together the two main functions of a company's Information Systems Department:
 
  - The development team (Dev)
  - The system operations team (Ops)
 
-The DevOps movement was born in 2007 following the dissatisfaction of the system administration staff regarding Agile methods. Indeed, for several years, these methods have privileged the development part while neglecting the production system part, which created technical difficulties or very complex processes regarding the deployment and maintenance of services.
+The DevOps movement was born in 2007 following the dissatisfaction of the system administration staff regarding **Agile methods**. Indeed, for several years, these methods have privileged the development part while neglecting the production system part, which created technical difficulties or very complex processes regarding the deployment and maintenance of services.
 
 ## DevOps and Agile methods
 
-Agile methods are software development methods that place the customer at the center of the project. The development team creates a minimal version of the application and then adds new features through an iterative process that includes unit testing, integration testing and code review/improvement.
+Agile methods are software development methods that place the customer at the center of the project. The development team creates a minimal version of the application and then adds new features through an iterative process that includes **unit** testing, **integration** testing and **code review**/improvement.
 
 These iterations allow for regular feedback from the customer to the development team on the functionalities brought to the application and therefore allow the customer to better follow the progress of the project compared to a traditional method and to avoid the tunnel effect as much as possible.
 
@@ -32,16 +33,16 @@ DevOps allows a better collaboration between the technical teams, the quality de
 
 To avoid any ambiguity, it is necessary to define and differentiate the main axes of a continuous software development process.
 
-The principle of continuous delivery is that each modification of the code must lead to a new version integrating a new major capability or a set of small modifications.
+The principle of **continuous delivery** is that each modification of the code must lead to a new version integrating a new major capability or a set of small modifications.
 
-This principle is often confused with continuous deployment. It is the last step of the process and aims at deploying each new version in one or several environments of recipe or production in an automatic way.
+This principle is often confused with **continuous deployment**. It is the last step of the process and aims at deploying each new version in one or several environments of recipe or production in an automatic way.
 
 ![What is the difference between continuous delivery and continuous deployment?](../../static/images/posts/delivery-vs-deployment.png)
 ## The Stakes
 
-The implementation of CI / CD can allow software developers to save a considerable amount of time, but also to have a stricter and more regular quality control during development.
+The implementation of **CI / CD** can allow software developers to save a considerable amount of time, but also to have a stricter and more regular quality control during development.
 
-The implementation of a chain of CI / CD would then allow a net improvement of the quality of the applications by the passage of the tests of reliable quality requirements while unloading the developers of these tasks.
+The implementation of a chain of **CI / CD** would then allow a net improvement of the quality of the applications by the passage of the tests of reliable quality requirements while unloading the developers of these tasks.
 
 It could also fluidify and balance the workload between developers and network administrators, especially during deployments in the acceptance and production environment. Since most tasks are automated, teams could more easily delegate certain tasks while guaranteeing a favorable result.
 
@@ -51,8 +52,8 @@ The outcome of a project like this would bring a significant gain in productivit
 
 ## Conclusion
 
-To recap, we can say that despite the complexity of the job, DevOps requires technological knowledge, but above all, a certain reasoning based on automation and on a sustained technological watch.
+To recap, we can say that despite the complexity of the job, **DevOps** requires technological knowledge, but above all, a certain reasoning based on **automation** and on a sustained technological watch.
 
-However, it's helping software development in a fantastic way. It's bridging the gap between developers' need for change and operations' resist to change and thus creates a smooth path for Continuous Development and Continuous Integration.
+However, it's helping software development in a fantastic way. It's bridging the gap between developers' need for change and operations' resist to change and thus creates a smooth path for **Continuous Development** and **Continuous Integration**.
 
 
