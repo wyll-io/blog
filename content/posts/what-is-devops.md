@@ -1,7 +1,6 @@
-
 ---
 title: "Introduction to DevOps"
-date: 2022-31-08
+date: 2022-08-31
 tags: ["devops", "agile", "practices"]
 author: "Lucas VENTURA"
 draft: false
@@ -37,7 +36,7 @@ The principle of **continuous delivery** is that each modification of the code m
 
 This principle is often confused with **continuous deployment**. It is the last step of the process and aims at deploying each new version in one or several environments of recipe or production in an automatic way.
 
-![What is the difference between continuous delivery and continuous deployment?](../../static/images/posts/delivery-vs-deployment.png)
+![What is the difference between continuous delivery and continuous deployment?](/images/posts/delivery-vs-deployment.png)
 ## The Stakes
 
 The implementation of **CI / CD** can allow software developers to save a considerable amount of time, but also to have a stricter and more regular quality control during development.
