@@ -12,9 +12,9 @@ googleAnalytics = "blogwyllio"
 [deployment]
 
 [[deployment.targets]]
-name = "blog.wyll.io"
+name = "io.wyll.blog"
 URL = "s3://io.wyll.blog?region=eu-west-3"
-cloudFrontDistributionID = "E49UL545A0LIH"
+cloudFrontDistributionID = "EP96Y0H6JFISB"
 
 [[deployment.matchers]]
 pattern = "^.+\\.(js|css|svg|ttf)$"
