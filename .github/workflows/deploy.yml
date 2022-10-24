@@ -15,7 +15,7 @@ jobs:
     - name: AWS authentication and role assume
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::819272382835:role/RoleInfrastructure
+        role-to-assume: arn:aws:iam::819272382835:role/Role_Infrastructure
         aws-region: eu-west-3
     - name: Deploy to AWS S3
       run: hugo deploy --force --invalidateCDN
