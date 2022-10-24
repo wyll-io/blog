@@ -3,6 +3,7 @@ languageCode = "fr"
 title = "Wyll.io | Blog"
 disqusShortname = "blogwyllio"
 googleAnalytics = "blogwyllio"
+uglyurls = true
 
 [taxonomies]
 	author = "author"
