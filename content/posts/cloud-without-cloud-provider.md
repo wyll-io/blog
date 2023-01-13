@@ -25,3 +25,17 @@ To present Openstack, we will go back in time to 2010. Openstack is an open-sour
 
 The goal of this project is to provide cloud-based resources and services on standardized hardware.
 
+Openstack is used by all types of companies, telecom operators like Orange with their FlexEngine cloud, but also French cloud providers like OVHCloud.
+
+The Public sector and especially the research sector also uses Openstack a lot. For example, NUBO cloud (the Openstack platform maintained by the Public Finance Department), or Orion cloud of the national agricultural and environmental research institute (INRAE).
+On a larger scale at European level, we find in particular CERN (European Nuclear Research Committee)
+
+
+
+## Where does Openstack fit into the different cloud categories?
+
+There are 3 categories of cloud services: 
+    - SAAS (Software as Service), which represents applications that can be used in cloud environments such as Dropbox etc..
+    - PAAS (Plateform As Service) which represents the layer below the cloud level, this level is intended to provide services for application deployment in SAAS mode as openshift can do for example
+    - IAAS (Infrastructure As Service), This is the lowest level of cloud layers, it is on this basis that all other cloud categories are based.
+And that’s where we find Openstack
