@@ -92,6 +92,10 @@ Octavia provides a simple load-balancing system to complete a redundant architec
  + **IRONIC:**
 Ironic is a service that can function either directly in an Openstack environment or independently. It allows to install physical compute nodes as instances automatically.
 
+## And now the rest? ##
+
+I piqued your interest, you want to see what Openstack looks like? in a second article I will show you how to install appliances all in one from openstack type kolla ansible all in one, or microstack.
+
 
 
 
