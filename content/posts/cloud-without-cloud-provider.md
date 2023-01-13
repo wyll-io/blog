@@ -36,11 +36,12 @@ On a larger scale at European level, we find in particular CERN (European Nuclea
 
 There are 3 categories of cloud services: 
 
-+ SAAS (Software as Service), which represents applications that can be used in cloud environments such as Dropbox etc..
++ **SAAS (Software as Service)**, which represents applications that can be used in cloud environments such as Dropbox etc..
 
-+ PAAS (Plateform As Service) which represents the layer below the cloud level, this level is intended to provide services for application deployment in SAAS mode as openshift can do for example
++ **PAAS (Plateform As Service)** which represents the layer below the cloud level, this level is intended to provide services for application deployment in SAAS mode as openshift can do for example
 
-+ IAAS (Infrastructure As Service), This is the lowest level of cloud layers, it is on this basis that all other cloud categories are based. And that’s where we find Openstack
++ **IAAS (Infrastructure As Service)**, This is the lowest level of cloud layers, it is on this basis that all other cloud categories are based. And that’s where we find Openstack
+
 
 ## What does Openstack consist of?
 
@@ -51,44 +52,44 @@ Inter-service communication is paramount , this role is assigned to the RabbitMQ
 
 I will now introduce Openstack’s core services,
 
-+ NOVA :
++ **NOVA :**
  It's the service that will allow to create and manage instances of calculations on the Openstack platform, the virtualization engine used by default is libvirt, but other engines are possible, there have even been installations based on the VmWare ESXI engine in the past.
 
- + KEYSTONE :
+ + **KEYSTONE :**
  It is the service that will manage all the authentications whether it is the inter-service authorizations or the authentications of the users.
 
- + CINDER : 
+ + **CINDER :** 
  This service will allow the creation of storage volume to attached instances, these volumes can generally be attached detached from one instance to another
 
- + GLANCE:
+ + **GLANCE:**
  Glance is a system image management service for instance creation. You can add, delete images and even take snapshots
 
- + NEUTRON:
+ + **NEUTRON:**
  Neutron is the service of management of the network, it will allow the creation of virtual networks for the instances but also allow of associated floating ip, but also of ability to do filtering of protocols with the security groups
 
- + HORIZON:
+ + **HORIZON:**
  Horizon is the service allowing access to the web administration interface for users but also to the APIs, of the various services
 
  Now among the optional services it is interesting to have include:
 
- + SWIFT: 
+ + **SWIFT:** 
  Swift is a distributed and redundant storage system, it allows the supply of volume in block mode accessible via APIs of type S3.
 
- + HEAT:
+ + **HEAT:**
 Heat is an orchestration engine specific to Openstack.
 It makes it possible to automate the construction of an entire infrastructure, consisting of storage computes or networks, via a Yaml file.
 
- + OCTAVIA:
+ + **OCTAVIA:**
 This service is particularly interesting when you want to manage your own load-balancing system.
 Octavia provides a simple load-balancing system to complete a redundant architecture
 
- + DESIGNATE:
+ + **DESIGNATE:**
  With Designate, it is possible to fully manage the domain name management services as can the AWS route53 service.
 
- + TROVE:
+ + **TROVE:**
  Trove is an on-demand database supply service. Trove provides databases such as Cassandra, CouchBase, CouchDB, DataStax Enterprise, DB2, MariaDB, MongoDB, MySQL, Oracle, Percona Server, PostgreSQL, Redis and Vertica. It manages user accesses but also the backup restoration of databases.
 
- + IRONIC:
+ + **IRONIC:**
 Ironic is a service that can function either directly in an Openstack environment or independently. It allows to install physical compute nodes as instances automatically.
 
 
