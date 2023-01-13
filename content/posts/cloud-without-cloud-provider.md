@@ -35,7 +35,9 @@ On a larger scale at European level, we find in particular CERN (European Nuclea
 ## Where does Openstack fit into the different cloud categories?
 
 There are 3 categories of cloud services: 
-    - SAAS (Software as Service), which represents applications that can be used in cloud environments such as Dropbox etc..
-    - PAAS (Plateform As Service) which represents the layer below the cloud level, this level is intended to provide services for application deployment in SAAS mode as openshift can do for example
-    - IAAS (Infrastructure As Service), This is the lowest level of cloud layers, it is on this basis that all other cloud categories are based.
-And that’s where we find Openstack
+
++ SAAS (Software as Service), which represents applications that can be used in cloud environments such as Dropbox etc..
+
++ PAAS (Plateform As Service) which represents the layer below the cloud level, this level is intended to provide services for application deployment in SAAS mode as openshift can do for example
+
++ IAAS (Infrastructure As Service), This is the lowest level of cloud layers, it is on this basis that all other cloud categories are based. And that’s where we find Openstack
