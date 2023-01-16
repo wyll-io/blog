@@ -41,7 +41,8 @@ There are 3 categories of cloud services:
 + **PAAS (Plateform As Service)** which represents the layer below the cloud level, this level is intended to provide services for application deployment in SAAS mode as openshift can do for example
 
 + **IAAS (Infrastructure As Service)**, This is the lowest level of cloud layers, it is on this basis that all other cloud categories are based. And that’s where we find Openstack
-[Openstack IAAS](/images/posts/openstack1.png)
+
+![Openstack IAAS](/images/posts/openstack1.png)
 
 ## What does Openstack consist of?
 
