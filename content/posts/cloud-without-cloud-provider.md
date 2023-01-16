@@ -50,7 +50,7 @@ Openstack consists of several services that will collaborate together, there are
 Before discussing the mandatory services of Openstack, we must also take into account that all the services need to store information in a database, Mariadb being the privileged system in most installations.
 Inter-service communication is paramount , this role is assigned to the RabbitMQ messaging system. 
 
-I will now introduce Openstack’s core services,
+I will now introduce Openstack’s core services:
 
 + **NOVA :**
  It's the service that will allow to create and manage instances of calculations on the Openstack platform, the virtualization engine used by default is libvirt, but other engines are possible, there have even been installations based on the VmWare ESXI engine in the past.
@@ -91,6 +91,138 @@ Octavia provides a simple load-balancing system to complete a redundant architec
 
  + **IRONIC:**
 Ironic is a service that can function either directly in an Openstack environment or independently. It allows to install physical compute nodes as instances automatically.
+
+## How to use Openstack cloud with Terraform
+
+Openstack like most cloud systems is fully compatible with the use of terraform, I will give a small example of deployment of an instance and a network in an existing openstack project.
+
+The first files to create to connect to the Openstack apis are:
+
++ **provider.yaml**
+```
+terraform {
+  required_version = ">= 0.14.0"
+  required_providers {
+    openstack = {
+      source  = "terraform-provider-openstack/openstack"
+      version = ">= 1.48.0"
+    }
+
+}
+}
+## Configure the OpenStack Provider
+provider "openstack" {
+  cloud = "mon_cloud" ## corresponds to the name of the cloud in the cloud.yaml file
+}
+
+```
++ **clouds.yaml**
+```
+clouds:
+  mon_cloud:
+
+    auth:
+
+      auth_url: https://mon-cloud.wyll.io:5000
+
+      project_name: ""# name of existing project
+      username: ""# name of user as right on project
+      password: ""# password of user
+      project_domain_name: "my_domain" # domain whose project depends
+      domain_name: "INRA"  # domain whose user depends
+    region_name: "my_region" # region whose project depends
+
+    interface: "public"
+    identity_api_version: 3
+```
+Other files must to be created to deploy instance on openstack project :
+
++ **main.yaml**
+
+```
+resource "openstack_compute_instance_v2" "instance" {
+  name            = var.instance-name
+  image_id        = data.openstack_images_image_v2.image_instance.id
+  flavor_id       = data.openstack_compute_flavor_v2.instance.id
+  key_pair        = var.key_pair
+  security_groups = var.security_groups
+
+network {
+    uuid = data.openstack_networking_network_v2.my_network.id ## network used for instance ip
+  }
+
+}
+### get foating ip on the pool
+resource "openstack_networking_floatingip_v2" "fip1" {
+  pool = var.floating-zone[0] ## floating ip to expose instance to external network
+}
+
+### associate floating ip to instance
+resource "openstack_compute_floatingip_associate_v2" "fip1" {
+  floating_ip = openstack_networking_floatingip_v2.fip1.address
+  instance_id = openstack_compute_instance_v2.instance.id
+}
+```
+
++ **variables.yaml**
+```
+variable instance-name {
+type = string
+default = "toto"### name of instance
+}
+
+data "openstack_compute_flavor_v2" "instance" {
+  name = "m1.small" # list of flavor create on openstack
+
+data "openstack_images_image_v2" "image_instance" {
+  name        = "ubuntu-22.04-LTS" # system image to be deployed
+  most_recent = true
+}
+
+variable key_pair {
+type = string
+default = "my-key" ## ssh key to be used on instance
+}
+
+variable "security_groups" {
+type = set(string)
+default = ["default"] ### security group of project
+}
+
+variable net-name {
+default = ["my_network", "my_network2"] ### list of instance networks
+type = list(string)
+}
+
+data "openstack_networking_network_v2" "my_network" {
+  name = "${var.net-name[0]}"
+}
+
+data "openstack_networking_network_v2" "my_network2" {
+  name = "${var.net-name[1]}"
+}
+
+variable floating-zone {
+    type = list(string)
+    default = ["float_net1", "float_net2"] ### list of floating ip network
+}
+```
++ **output.yaml**
+```
+output instance_name {
+description = "instance name"
+value = openstack_compute_instance_v2.instance.name
+}
+output instance_prv-ip {
+    description = "internal instance ip"
+    value = openstack_compute_instance_v2.instance.access_ip_v4
+}
+
+output instance_floating-ip {
+    description = "floating ip mapped on instance"
+    value = openstack_networking_floatingip_v2.fip1.address
+}
+```
 
 ## And now the rest? ##
 
