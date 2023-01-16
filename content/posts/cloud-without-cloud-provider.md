@@ -3,7 +3,7 @@ title: "A cloud without cloud provider"
 date: 2022-01-13
 tags: ["cloud", "openstack", "infra"]
 author: "Florian Trincal"
-draft: true
+draft: false
 ---
 
 # A cloud without cloud provider, it's possible ?
