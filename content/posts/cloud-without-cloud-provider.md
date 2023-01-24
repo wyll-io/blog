@@ -6,9 +6,7 @@ author: "Florian Trincal"
 draft: false
 ---
 
-# A cloud without cloud provider, it's possible ?
-
-In this article I will present the Openstack cloud solution, which allows to have a real cloud system in your company. 
+A cloud without cloud provider, it's possible ? In this article I will present the Openstack cloud solution, which allows to have a real cloud system in your company. 
 <!--more-->
 
 ## A cloud is in every mouth today
