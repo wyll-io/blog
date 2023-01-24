@@ -1,7 +1,7 @@
 <div class="card mb-4">
     <div class="card-body">
         <h5 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h5>
-        <h6 class="card-subtitle mb-2 text-muted">Publié le <b>{{ .Date.Format "02/01/2006" }}</b></h6>
+        <h6 class="card-subtitle mb-2 text-muted">Posted on <b>{{ .Date.Format "02/01/2006" }}</b></h6>
         {{ range (.GetTerms "tags") }}
         <span class="badge badge-primary">{{ .LinkTitle }}</span>
         {{ end }}
