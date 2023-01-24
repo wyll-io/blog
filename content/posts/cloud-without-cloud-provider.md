@@ -1,6 +1,6 @@
 ---
 title: "A cloud without cloud provider"
-date: 2022-01-13
+date: 2023-01-13
 tags: ["cloud", "openstack", "infra"]
 author: "Florian Trincal"
 draft: false
