@@ -8,7 +8,7 @@
       <h1 class="mb-4">Last posts</h1>
 
       {{ range ( where .Site.RegularPages "Type" "posts" | first 5) }}
-      <div class="col-xs-4 col-12">
+      <div class="col-12 col-md-6">
         {{ partial "post_summary" . }}
       </div>
       {{ end }}
