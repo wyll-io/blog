@@ -12,5 +12,8 @@ jobs:
     continue-on-error: true
     steps:
     - uses: actions/checkout@v3
+    - uses: peaceiris/actions-hugo@v2
+    - name: Generate static files
+      run: hugo
     - uses: rojopolis/spellcheck-github-actions@0.29.0
       name: Spellcheck

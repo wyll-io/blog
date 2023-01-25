@@ -8,19 +8,18 @@ matrix:
     wordlists:
     - .wordlist.txt
   pipeline:
-  - pyspelling.filters.markdown:
-      markdown_extensions:
-      - markdown.extensions.extra:
   - pyspelling.filters.html:
       comments: false
       attributes:
       - alt
       ignores:
       - :matches(code, pre)
-      - span:matches(.text-muted)
+      - b:matches(.post_date)
+      - b:matches(.post_author)
+      - span:matches(.post_tag)
       - code
       - pre
       - blockquote
   sources:
-  - 'content/posts/*.md'
+  - 'public/posts/*.html'
   default_encoding: utf-8
