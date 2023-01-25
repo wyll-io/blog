@@ -31,9 +31,9 @@ func (*dynamodb.Client).CreateTable(ctx context.Context, params *dynamodb.Create
 
 This function takes as arguments the context, the creation parameters and other non-mandatory options. Let's create the parameters below, knowing that the following are mandatory:
 
-- AttributeDefinitions: attributes of the primary key
-- KeySchema: primary key scheme
-- TableName: the name of the table
+- `AttributeDefinitions`: attributes of the primary key
+- `KeySchema`: primary key scheme
+- `TableName`: the name of the table
 
 We will also choose the `BillingModePayPerRequest` mode to simplify the exercise.
 
@@ -78,7 +78,7 @@ go run main.go example1 create
 
 You can confirm that your table is created in the AWS console :
 
-![Table créée](/images/posts/table-creee.png)
+![Table created](/images/posts/table-creee.png)
 
 ## Add items into table
 
@@ -90,8 +90,8 @@ func (*dynamodb.Client).PutItem(ctx context.Context, params *dynamodb.PutItemInp
 
 This function takes as arguments the context, the addition parameters and any options. Let's create the parameters below, knowing that the following are mandatory:
 
-- Item : the item to add
-- TableName : the name of the table
+- `Item` : the item to add
+- `TableName` : the name of the table
 
 ```go
 // Set the parameters
@@ -127,7 +127,7 @@ go run main.go example1 put -t test
 
 We can confirm on the AWS console that we see our element. We will also see just then how to confirm this using the library.
 
-![Elements dans la table DynamoDB](/images/posts/elements-table-dynamodb.png)
+![Item in DynamoDB table](/images/posts/elements-table-dynamodb.png)
 
 ## Find elements in a table
 
