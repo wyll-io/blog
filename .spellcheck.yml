@@ -2,6 +2,7 @@ matrix:
 - name: Posts
   aspell:
     lang: en
+    d: en_US
     ignore-case: true
   dictionary:
     wordlists:
