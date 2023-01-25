@@ -11,7 +11,7 @@ In this article, we will present you how we choose to deploy our blog by using D
 
 # Hugo, not Wordpress
 
-The aim of this blog is to share technical skills and experiences within a website that can be read either on a computer, a mobile, etc.. That being said, there is no need to use a CMS such as Wordpress as it would be totally overkilled because it rely on a complex tool and an interpreted langage (PHP). It can simply be a static website. For the comments, let's use a SaaS, for example [Disqus](https://disqus.com).
+The aim of this blog is to share technical skills and experiences within a website that can be read either on a computer, a mobile, etc.. That being said, there is no need to use a CMS such as Wordpress as it would be totally overkill because it rely on a complex tool and an interpreted language (PHP). It can simply be a static website. For the comments, let's use a SaaS, for example [Disqus](https://disqus.com).
 
 That is why we chose to use [Hugo](https://gohugo.io).
 
