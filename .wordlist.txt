@@ -7,3 +7,10 @@ Cloudfront
 TOML
 Disqus
 golang
+openstack
+yaml
+CouchBase
+CouchDB
+DataStax
+Percona
+Vertica
