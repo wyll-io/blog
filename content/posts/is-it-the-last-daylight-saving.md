@@ -39,7 +39,7 @@ c:\dev\src>cd tzdata
 c:\dev\src\tzdata>
 ```
 
-In the folder you can find a file for each zone of the world, if you open the one nammed `europe`, you can see all the rule for the European continent. The file is a bit huge so you can go directly to [line 571](https://salsa.debian.org/glibc-team/tzdata/-/blob/sid/europe#L571) to see the rule that manage the France.
+In the folder you can find a file for each zone of the world, if you open the one named `europe`, you can see all the rule for the European continent. The file is a bit huge so you can go directly to [line 571](https://salsa.debian.org/glibc-team/tzdata/-/blob/sid/europe#L571) to see the rule that manage the France.
 
 The file explains that the rule for France is the rule of Europe as its belongs to European Union.
 
@@ -58,7 +58,7 @@ Zone	Europe/Paris	0:09:21 -	LMT	1891 Mar 16
 ```
 
 The last line is the one that is active today : `1:00	EU	CE%sT`.  
-It basically says that the summer time `saves one hour` and refers to the rule called `EU`. The formatted timezone name is `CET` with an optional caracter (we will see it below).  
+It basically says that the summer time `saves one hour` and refers to the rule called `EU`. The formatted timezone name is `CET` with an optional character (we will see it below).  
 
 Let's find the `EU rule`, it is here :
 
@@ -74,8 +74,8 @@ Rule	EU	1996	max	-	Oct	lastSun	 1:00u	0	-
 
 Let's take a look at the two last lines :
 
- - `Rule	EU	1981	max	-	Mar	lastSun	 1:00u	1:00	S` : starting from the year 1981, the summer time is applied at the **last sunday of March**. We can also see that it append the letter `S` (for summer) that will be used for the formating.
- - `Rule	EU	1996	max	-	Oct	lastSun	 1:00u	0	` : the winter time has been last decide from 1996, it happens the **last sunday of October**.
+ - `Rule	EU	1981	max	-	Mar	lastSun	 1:00u	1:00	S` : starting from the year 1981, the summer time is applied at the **last Sunday of March**. We can also see that it append the letter `S` (for summer) that will be used for the formatting.
+ - `Rule	EU	1996	max	-	Oct	lastSun	 1:00u	0	` : the winter time has been last decide from 1996, it happens the **last Sunday of October**.
 
 If you are a history lover, you can read the whole part of the file for France and Europe, all the time changes are written. Great work that has been done here !
 

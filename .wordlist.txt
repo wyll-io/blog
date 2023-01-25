@@ -15,3 +15,5 @@ DataStax
 Percona
 Vertica
 Github
+RethinkDB
+DynamoDB
