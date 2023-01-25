@@ -124,7 +124,7 @@ Europe/Paris  9223372036854689407 = NULL
 Europe/Paris  9223372036854775807 = NULL
 ```
 
-Wouah ! It is decided until year 2499 ! It is not ready to be be changed ^^
+Oh my God ! It is decided until year 2499 ! It is not ready to be be changed ^^
 
 ## Let's keep an eye on this
 
