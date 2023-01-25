@@ -1,4 +1,5 @@
 DevOps
+dev
 Wyll
 Wordpress
 HTTPS
@@ -47,3 +48,6 @@ OvhCloud
 GAFAM
 openshift
 PAAS
+IAAS
+NUBO
+FlexEngine

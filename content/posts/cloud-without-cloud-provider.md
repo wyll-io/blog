@@ -24,7 +24,7 @@ To present Openstack, we will go back in time to 2010. Openstack is an open-sour
 
 The goal of this project is to provide cloud-based resources and services on standardized hardware.
 
-Openstack is used by all types of companies, telecom operators like Orange with their FlexEngine cloud, but also French cloud providers like OVHCloud.
+Openstack is used by all types of companies, telecommunications operators like Orange with their FlexEngine cloud, but also French cloud providers like OVHCloud.
 
 The Public sector and especially the research sector also uses Openstack a lot. For example, NUBO cloud (the Openstack platform maintained by the Public Finance Department), or Orion cloud of the national agricultural and environmental research institute (INRAE).
 On a larger scale at European level, we find in particular CERN (European Nuclear Research Committee)
@@ -48,7 +48,7 @@ Openstack consists of several services that will collaborate together, there are
 Before discussing the mandatory services of Openstack, we must also take into account that all the services need to store information in a database, Mariadb being the privileged system in most installations.
 Inter-service communication is paramount , this role is assigned to the RabbitMQ messaging system. 
 
-I will now introduce Openstack’s core services:
+I will now introduce the Openstack core services:
 
 + **NOVA :**
  It's the service that will allow to create and manage instances of calculations on the Openstack platform, the virtualization engine used by default is libvirt, but other engines are possible, there have even been installations based on the VmWare ESXI engine in the past.
