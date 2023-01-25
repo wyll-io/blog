@@ -11,7 +11,7 @@ You will discover how to use certain **AWS services (DynamoDB, S3, etc.)** with 
 
 For this we will use the official Amazon library for Golang: `github.com/aws/aws-sdk-go-v2`.
 
-# DynamoBD
+# DynamoDB
 
 DynamoDB is the Amazon's cloud service that offers non-relational **databases** (like MongoDB, RethinkDB, etc..), we will use the Golang library to create a database, list the values of a table, add and delete data.
 
