@@ -42,3 +42,6 @@ VmWare
 libvirt
 APIs
 Rackspace
+GAFAM
+OvhCloud
+GAFAM
