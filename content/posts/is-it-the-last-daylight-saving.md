@@ -86,14 +86,50 @@ When you install `tzdata`, what it does under the hood is that it is compiling t
 	/usr/sbin/zic -d $(TZGEN) -L /dev/null tzdata.zi ;
 ```
 
-It will generate the file below :
+It will generate each files for each timezones into the directory `/usr/share/zoneinfo/`.  These files seems to be compiled. That's why we need another tool to get the human readable content, it is called `zdump`.
+
+Let's find out what is our timezone on the machine : 
 
 ```
-To be added.
+[root@test-server ~]# ls -ln /etc/localtime
+lrwxrwxrwx. 1 0 0 34 Jul 18  2022 /etc/localtime -> ../usr/share/zoneinfo/Europe/Paris
 ```
 
-We can see all the shifts that will be applied to the clock. And the rule is not ready to be be changed.
+Let's now use `zump` and see what will happen on 2023 :
+
+```
+[root@test-server ~]# zdump -v Europe/Paris | grep 2023
+Europe/Paris  Sun Mar 26 00:59:59 2023 UTC = Sun Mar 26 01:59:59 2023 CET isdst=0 gmtoff=3600
+Europe/Paris  Sun Mar 26 01:00:00 2023 UTC = Sun Mar 26 03:00:00 2023 CEST isdst=1 gmtoff=7200
+Europe/Paris  Sun Oct 29 00:59:59 2023 UTC = Sun Oct 29 02:59:59 2023 CEST isdst=1 gmtoff=7200
+Europe/Paris  Sun Oct 29 01:00:00 2023 UTC = Sun Oct 29 02:00:00 2023 CET isdst=0 gmtoff=3600
+```
+
+It is pretty clear :
+
+ - until the 26 March at 0h59 we are 3600 minutes after the global time, so 1 hour, what we call **GMT+1**.
+ - at 1h00 we jump to 7200 minutes after the global time, so 2 hours, what we call **GMT+2** aka the **CentralEuropeanSummerTime (CEST)**. And this until the 29 October at 0h59
+ - and then at 1h we come back to GMT+1
+
+Can we see if then have already plan to change it ? Let's try to see the last lines of the zdump output :
+
+```
+[root@test-server ~]# zdump -v Europe/Paris | tail -5
+Europe/Paris  Sun Mar 29 01:00:00 2499 UTC = Sun Mar 29 03:00:00 2499 CEST isdst=1 gmtoff=7200
+Europe/Paris  Sun Oct 25 00:59:59 2499 UTC = Sun Oct 25 02:59:59 2499 CEST isdst=1 gmtoff=7200
+Europe/Paris  Sun Oct 25 01:00:00 2499 UTC = Sun Oct 25 02:00:00 2499 CET isdst=0 gmtoff=3600
+Europe/Paris  9223372036854689407 = NULL
+Europe/Paris  9223372036854775807 = NULL
+```
+
+Wouah ! It is decided until year 2499 ! It is not ready to be be changed ^^
+
+## Let's keep an eye on this
+
+We could create a scrapper that will frequently check for changes in the file that we care about, the `europe` file. Or maybe try to use a **Github Action** to do so.
 
 ## Conclusion
 
-We can answer to the question of time changes with the tzdata package because it holds a very important information for computers : the clock. So basically, if it become true, we should be able to see commits to this package.
+Thanks to computer science, we can answer to the question of time changes with the tzdata package because it holds a very important information for computers : the clock. So basically, if it would change, we should be able to see commits to this package.
+
+To conclude, no, we will not keep the summer time as the only one time !
