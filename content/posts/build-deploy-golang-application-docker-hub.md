@@ -62,7 +62,7 @@ func TestSum(t *testing.T) {
 
 # The Dockerfile
 
-At the root of the projet, we also need to add a **Dockerfile**:
+At the root of the project, we also need to add a **Dockerfile**:
 
 ```Dockerfile
 FROM golang:latest as builder

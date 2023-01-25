@@ -14,10 +14,11 @@ matrix:
       attributes:
       - alt
       ignores:
-      - ':matches(code, pre)'
-      - 'code'
-      - 'pre'
-      - 'blockquote'
+      - :matches(code, pre)
+      - span:matches(.text-muted)
+      - code
+      - pre
+      - blockquote
   sources:
   - 'content/posts/*.md'
   default_encoding: utf-8

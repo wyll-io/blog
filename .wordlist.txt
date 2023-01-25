@@ -17,3 +17,5 @@ Vertica
 Github
 RethinkDB
 DynamoDB
+Scaleway
+GCP
