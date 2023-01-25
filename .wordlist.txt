@@ -25,3 +25,6 @@ CEST
 zdump
 RabbitMQ
 terraform
+ansible
+kolla
+microstack
