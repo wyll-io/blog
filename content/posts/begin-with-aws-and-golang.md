@@ -80,7 +80,7 @@ You can confirm that your table is created in the AWS console :
 
 ![Table créée](/images/posts/table-creee.png)
 
-## Ajouter des éléments dans une table
+## Add items into table
 
 To create a table, we must use the function `PutItem`:
 

@@ -19,7 +19,7 @@ From the computer science point of view, the daylight savings are a matter of **
 
 ## TZDATA
 
-Timezones are handled by a package called `tzdata`, the code source can be found here : `https://salsa.debian.org/glibc-team/tzdata`. Basically this package holds all the rules for all countries in the world in what we call timesone databases.
+Time zones are handled by a package called `tzdata`, the code source can be found here : `https://salsa.debian.org/glibc-team/tzdata`. Basically this package holds all the rules for all countries in the world in what we call timezone databases.
 
 You can clone it if you want to see what is under the scenes :
 
@@ -110,7 +110,7 @@ Europe/Paris  Sun Oct 29 01:00:00 2023 UTC = Sun Oct 29 02:00:00 2023 CET isdst=
 It is pretty clear :
 
  - until the 26 March at 0h59 we are 3600 minutes after the global time, so 1 hour, what we call **GMT+1**.
- - at 1h00 we jump to 7200 minutes after the global time, so 2 hours, what we call **GMT+2** aka the **CentralEuropeanSummerTime (CEST)**. And this until the 29 October at 0h59
+ - at 1h00 we jump to 7200 minutes after the global time, so 2 hours, what we call **GMT+2** aka the **Central European Summer Time (CEST)**. And this until the 29 October at 0h59
  - and then at 1h we come back to GMT+1
 
 Can we see if then have already plan to change it ? Let's try to see the last lines of the zdump output :

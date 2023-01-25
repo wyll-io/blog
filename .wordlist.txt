@@ -19,3 +19,7 @@ RethinkDB
 DynamoDB
 Scaleway
 GCP
+linux
+TZDATA
+CEST
+zdump
