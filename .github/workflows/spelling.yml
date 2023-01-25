@@ -12,5 +12,5 @@ jobs:
     continue-on-error: true
     steps:
     - uses: actions/checkout@v2
-    - uses: rojopolis/spellcheck-github-actions
+    - uses: rojopolis/spellcheck-github-actions@master
       name: Spellcheck
