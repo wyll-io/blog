@@ -45,3 +45,5 @@ Rackspace
 GAFAM
 OvhCloud
 GAFAM
+openshift
+PAAS
