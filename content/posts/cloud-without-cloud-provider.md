@@ -165,6 +165,7 @@ resource "openstack_compute_floatingip_associate_v2" "fip1" {
 ```
 
 + **variables.yaml**
+
 ```
 variable instance-name {
 type = string
@@ -207,7 +208,9 @@ variable floating-zone {
     default = ["float_net1", "float_net2"] ### list of floating ip network
 }
 ```
+
 + **output.yaml**
+
 ```
 output instance_name {
 description = "instance name"
@@ -224,7 +227,7 @@ output instance_floating-ip {
 }
 ```
 
-## And now the rest? ##
+## And now the rest ?
 
 I piqued your interest, you want to see what Openstack looks like? in a second article I will show you how to install appliances all in one from openstack type kolla ansible all in one, or microstack.
 
