@@ -41,3 +41,4 @@ ESXI
 VmWare
 libvirt
 APIs
+Rackspace
