@@ -88,7 +88,7 @@ When you install `tzdata`, what it does under the hood is that it is compiling t
 	/usr/sbin/zic -d $(TZGEN) -L /dev/null tzdata.zi ;
 ```
 
-It will generate each files for each timezones into the directory `/usr/share/zoneinfo/`.  These files seems to be compiled. That's why we need another tool to get the human readable content, it is called `zdump`.
+It will generate each files for each time zones into the directory `/usr/share/zoneinfo/`.  These files seems to be compiled. That's why we need another tool to get the human readable content, it is called `zdump`.
 
 Let's find out what is our timezone on the machine : 
 
