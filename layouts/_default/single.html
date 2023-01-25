@@ -6,10 +6,10 @@
   <div class="container mt-4">
     <h1>{{ .Title }}</h1>
     
-    <span class="text-muted mb-4">Posted on <b>{{ .Date.Format "02/01/2006" }}</b> by <b>{{ .Params.author }}</b></span>
+    <span class="text-muted mb-4">Posted on <b class="post_date">{{ .Date.Format "02/01/2006" }}</b> by <b class="post_author">{{ .Params.author }}</b></span>
 
     {{ range .Params.tags }}
-    <span class="badge bg-light text-dark">{{ . }}</span>
+    <span class="badge bg-light text-dark post_tag">{{ . }}</span>
     {{ end }}
   
     <div class="mt-4">
