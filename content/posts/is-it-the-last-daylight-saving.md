@@ -9,7 +9,9 @@ draft: false
 In France, discussions are going well regarding the change of summer and winter time ! Let's go further in this article..
 <!--more-->
 
-There is always someone to say that this year is the last time we change the clock : `They want to keep the summer time forever`.
+There is always someone to say that this year is the last time we change the clock :
+
+> They want to keep the summer time forever, I heard this on the news, trust me !
 
 # How computer science sees it
 
