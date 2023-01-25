@@ -9,7 +9,6 @@ jobs:
   spellcheck:
     name: Spellcheck
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
     - uses: actions/checkout@v3
     - uses: peaceiris/actions-hugo@v2
