@@ -1,5 +1,5 @@
 matrix:
-- name: Markdown
+- name: Posts
   aspell:
     lang: en
   dictionary:
@@ -7,11 +7,17 @@ matrix:
     - .wordlist.txt
   pipeline:
   - pyspelling.filters.markdown:
+      markdown_extensions:
+      - markdown.extensions.extra:
   - pyspelling.filters.html:
       comments: false
+      attributes:
+      - alt
       ignores:
-      - code
-      - pre
+      - ':matches(code, pre)'
+      - 'code'
+      - 'pre'
+      - 'blockquote'
   sources:
   - 'content/posts/*.md'
   default_encoding: utf-8
