@@ -43,7 +43,7 @@ The implementation of **CI / CD** can allow software developers to save a consid
 
 The implementation of a chain of **CI / CD** would then allow a net improvement of the quality of the applications by the passage of the tests of reliable quality requirements while unloading the developers of these tasks.
 
-It could also fluidify and balance the workload between developers and network administrators, especially during deployments in the acceptance and production environment. Since most tasks are automated, teams could more easily delegate certain tasks while guaranteeing a favorable result.
+It could also fluidize and balance the workload between developers and network administrators, especially during deployments in the acceptance and production environment. Since most tasks are automated, teams could more easily delegate certain tasks while guaranteeing a favorable result.
 
 On the other hand, the implementation of non-adapted solutions could lead to too many changes in the development processes, which could cause a poor knowledge of the quality requirements among the employees and slow down the development of the product.
 

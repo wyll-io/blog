@@ -35,3 +35,9 @@ SaaS
 CLI
 DNS
 SSL
+CERN
+INRAE
+ESXI
+VmWare
+libvirt
+APIs
