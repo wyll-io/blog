@@ -8,7 +8,7 @@
       <h1 class="mb-4">Welcome to the official blog of <strong>Wyll</strong></h1>
       <h2 class="mb-2">Latest posts</h2>
 
-      {{ range ( where .Site.RegularPages "Type" "posts" | first 5) }}
+      {{ range ( where .Site.RegularPages "Type" "posts" | first 10) }}
       <div class="col-12 col-md-6">
         {{ partial "post_summary" . }}
       </div>
