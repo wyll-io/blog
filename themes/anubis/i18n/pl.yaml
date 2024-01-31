@@ -1,0 +1,41 @@
+powered:
+  other: "Zasilany przez"
+
+theme:
+  other: "motyw"
+
+readMore:
+  other: "Czytaj dalej"
+
+toNewPosts:
+  other: "poprzednia strona"
+
+toOldPosts:
+  other: "następna strona"
+
+tag:
+  other: "tag"
+
+Tags:
+  other: "Tagi"
+
+Posts:
+  other: "Posty"
+
+category:
+  other: "kategoria"
+
+Categories:
+  other: "Kategorie"
+
+toAllTags:
+  other: "wszystkie tagi"
+
+toAllCategories:
+  other: "wszystkie kategorie"
+
+skipToContent:
+  other: "Przejdź do głównej zawartości"
+
+readNext:
+  other: "Czytaj dalej"

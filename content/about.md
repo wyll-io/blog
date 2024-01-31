@@ -6,9 +6,9 @@ layout: about
 
 # About us
 
-Wyll is a pure player, fully independent, a real Hub in Occitania on topics related to ecosystems 𝗗𝗲𝘃𝗢𝗽𝘀, 𝗗𝗮𝘁𝗮 & 𝗖𝗹𝗼𝘂𝗱!
+Wyll is a pure player, fully independent, a real Hub in Occitania on topics related to ecosystems **DevOps** and **Cloud** !
 
-This team of passionate Toulouse residents is convinced that today, a DevOps approach is inseparable from an opening towards the CLOUD of certain services in a context where DATA processing is increasingly complex.
+This team of passionate **Toulouse** residents is convinced that today, a DevOps approach is inseparable from an opening towards the CLOUD of certain services in a context where DATA processing is increasingly complex.
 This is why we support our customers on these 3 axes and explain at the same time, projects/developments/training/certifications to our experts on the entirety of this perimeter.
 
 Wyll - it's above all a bunch of tech buffs yes... BUT NOT ONLY!
@@ -24,4 +24,4 @@ Pour as much, on strong bump too. At Wyll, one is able to use the Prune 🐳 Doc
 
 Wyll intervenes throughout the DevOps chain with an end-to-end approach from the upstream phase with the creation of POCs, through project management in Agile mode and application development (backend, frontend, fullstack and Big Data ) to the automation of tests, automation of integration and deployment as well as the phases of operability (OPS) and dematerialization of infrastructures (Infra As A Code & Cloud).
 
-Wyll you join us 👉 contact@wyll.io
+`Wyll` you join us ?

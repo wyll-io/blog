@@ -1,0 +1,59 @@
+powered:
+  other: "Powered by"
+
+theme:
+  other: "theme"
+
+readMore:
+  other: "Read more"
+
+toNewPosts:
+  other: "to new posts"
+
+toOldPosts:
+  other: "to old posts"
+
+tag:
+  other: "tag"
+
+author:
+  other: "author"
+
+Tags:
+  other: "Tags"
+
+Posts:
+  other: "Posts"
+
+category:
+  other: "category"
+
+Categories:
+  other: "Categories"
+
+toAllTags:
+  other: "to all tags"
+
+toAllAuthors:
+  other: "to all authors"
+
+toAllCategories:
+  other: "to all categories"
+
+skipToContent:
+  other: "Skip to main content"
+
+readNext:
+  other: "Read next"
+
+lastMod:
+  other: "Last modified:"
+
+toNewPost:
+  other: "to new post"
+
+toOldPost:
+  other: "to old post"
+
+videoIsNotSupported:
+  other: "Your browser does not support video"

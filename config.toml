@@ -1,14 +1,39 @@
-baseurl = "https://blog.wyll.io"
-languageCode = "fr"
-title = "Wyll.io | Blog"
-disqusShortname = "blogwyllio"
-googleAnalytics = "blogwyllio"
-uglyurls = true
+languageCode = "en-us"
+baseUrl = ""
+title = "Blog"
+theme = "anubis"
+paginate = 10
+enableRobotsTXT = true
 
 [taxonomies]
 	author = "author"
 	tag = "tags"
 	category = "categories"
+
+[[menu.main]]
+identifier = "archive"
+name = "Archive"
+title = "Archive"
+url = "/posts/"
+weight = 0
+
+[[menu.main]]
+identifier = "about"
+name = "About us"
+title = "About us"
+url = "/about/"
+weight = 0
+
+[params]
+  author = "Wyll.io"
+  email = "contact@wyll.io" # used for microformats
+  avatar = "" # used for microformats
+  description = ""
+	style = "dark"
+
+	[[params.social]]
+  id = "linkedin"
+  name = "company/wyll"
 
 [deployment]
 

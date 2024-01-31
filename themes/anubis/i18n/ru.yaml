@@ -1,0 +1,56 @@
+powered:
+  other: "Движок"
+
+theme:
+  other: "тема"
+
+readMore:
+  other: "Читать дальше"
+
+toNewPosts:
+  other: "к новым записям"
+
+toOldPosts:
+  other: "к старым записям"
+
+tag:
+  other: "тег"
+
+Tags:
+  other: "Теги"
+
+Posts:
+  other: "Записи"
+
+category:
+  other: "Категория"
+
+Categories:
+  other: "Категории"
+
+toAllTags:
+  other: "к списку тегов"
+
+toAllAuthors:
+  other: "к списку авторов"
+
+toAllCategories:
+  other: "к списку категорий"
+
+skipToContent:
+  other: "Перейти к основному контенту"
+
+readNext:
+  other: "Читать далее"
+
+lastMod:
+  other: "Отредактировано:"
+
+toNewPost:
+  other: "к новой записи"
+
+toOldPost:
+  other: "к старой записи"
+
+videoIsNotSupported:
+  other: "Ваш браузер не поддерживает видео"
