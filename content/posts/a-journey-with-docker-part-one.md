@@ -118,7 +118,7 @@ Let's focus on the **basic one**.
 
 #### Escape a chroot very basically
 
-The way to escape of a chroot jail is to create a directory, chroot into it, and change directory a lot of time in order to reach the top level of folders. Once this top drectory is being reached, we just have to chroot into it and start a shell. We just escaped.
+The way to escape of a chroot jail is to create a directory, chroot into it, and change directory a lot of time in order to reach the top level of folders. Once this top directory is being reached, we just have to chroot into it and start a shell. We just escaped.
 
 We will write this escaping solution with a **C program**. But we need the chroot where we are to have some prerequisites of course :
 
@@ -133,7 +133,7 @@ mkdir chrootFolder2
 cp -a bin/ usr/ lib/ root/ lib64/ chrootFolder2/
 ```
 
-Now let's write this C program :
+Now let's write this C program and name it `break.c`:
 
 ```c
 #include <sys/stat.h>
