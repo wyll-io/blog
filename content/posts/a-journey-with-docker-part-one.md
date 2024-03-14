@@ -3,7 +3,7 @@ title: "A journey with Docker (part 1)"
 date: 2023-08-01
 tags: ["docker", "linux", "runc", "chroot"]
 author: "François ALLAIS"
-draft: true
+draft: false
 ---
 
 Nowadays, Docker is widely used, it is everywhere and it stands as a foundation for many other systems. But do you how did it start ? Why do we need Docker, what does it solve, how it makes life easier ? Let's start this journey together and try to deep dive into Docker history.
