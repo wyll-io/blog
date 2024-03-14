@@ -43,7 +43,7 @@ libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007fe386400000)
 /lib64/ld-linux-x86-64.so.2 (0x00007fe386955000)
 ```
 
-Let's copy all these dependecies into the according directories !
+Let's copy all these dependencies into the according directories !
 
 ```bash
 mkdir -p /chrootFolder/lib/x86_64-linux-gnu
